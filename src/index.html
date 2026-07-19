@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACA Order Portal</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Azure Container Apps POC</p>
+          <h1>Order Portal</h1>
+          <p class="subtitle">Create and view orders from the backend API running on Azure Container Apps.</p>
+        </div>
+        <div class="status-panel">
+          <span class="status-dot" id="statusDot"></span>
+          <div>
+            <p class="status-label">Backend Status</p>
+            <strong id="healthText">Checking...</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <form class="panel form-panel" id="orderForm">
+          <div class="panel-header">
+            <h2>Add Order</h2>
+            <span id="versionBadge">v1</span>
+          </div>
+
+          <label for="customer">Customer</label>
+          <input id="customer" name="customer" type="text" placeholder="Megha Sharma" required>
+
+          <label for="product">Product</label>
+          <input id="product" name="product" type="text" placeholder="Mobile" required>
+
+          <button type="submit">Create Order</button>
+          <p class="message" id="message"></p>
+        </form>
+
+        <section class="panel orders-panel">
+          <div class="panel-header">
+            <h2>Orders</h2>
+            <button class="secondary" id="refreshBtn" type="button">Refresh</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Product</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="ordersBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
